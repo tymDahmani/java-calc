@@ -30,8 +30,15 @@ public class v1 {
             int first_num = scanner.nextInt();
             int second_num = scanner.nextInt();
             int result = multiplication(first_num, second_num);
-            System.out.println(result);
+            System.out.println("the result:" + result);
 
+        } else if (operation.equals("division") || operation.equals("/")) {
+            System.out.println(
+                    "enter the numbers you would like to divide from each other (first number, 'enter key', second number)");
+            int first_num = scanner.nextInt();
+            int second_num = scanner.nextInt();
+            int result = division(first_num, second_num);
+            System.out.println("the result: " + result);
         }
     }
 
@@ -48,5 +55,15 @@ public class v1 {
     public static int multiplication(int first_num, int second_num) {
         int result = first_num * second_num;
         return result;
+    }
+
+    public static int division(int first_num, int second_num) {
+        double result = first_num / second_num;
+        double remainder = first_num % second_num;
+        if (remainder != 0) {
+            System.out.println(remainder);
+            return (int) remainder;
+        }
+        return (int) result;
     }
 }
