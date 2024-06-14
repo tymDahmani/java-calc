@@ -8,6 +8,12 @@ public class v1 {
         Boolean keepCalculating = true;
 
         while (keepCalculating == true) {
+            System.out.println("Usage Instructions:");
+            System.out.println(
+                    "to choose the operator: type either the symbol of the operator (+ for addition, - for subtraction, ");
+            System.out
+                    .println("* for multiplication, and / for division), or the operator name in the right spelling.");
+            System.out.println("to exit the program, type \"exit\". enjoy!");
             System.out.println("What operation do you wish to do? (please just use integers)");
             operation = scanner.nextLine();
             if (operation.equals("addition") || operation.equals("+")) {
@@ -46,21 +52,35 @@ public class v1 {
                     System.out.println("the remainder: " + remainder);
                 }
                 System.out.println("the result: " + result);
+            } else if (operation.equalsIgnoreCase("exit")) {
+                break;
             } else {
                 System.out.println(
                         "please type the symbol of the operation or the word of operation correctly to start calculating :)");
+                continue;
             }
 
             scanner.nextLine();
 
-            System.out.println("would you like to calculate something more? [Y/N]");
-            String response = scanner.nextLine();
-            if (response.equalsIgnoreCase("N")) {
-                keepCalculating = false;
-                System.out.println("see you around!");
+            boolean validResponse = false;
+            while (!validResponse) {
+                System.out.println("would you like to calculate something more? [Y/N]");
+                String response = scanner.nextLine();
+                if (response.equalsIgnoreCase("N")) {
+                    keepCalculating = false;
+                    validResponse = true;
+                    System.out.println("see you around!");
+                } else if (response.equalsIgnoreCase("Y")) {
+                    keepCalculating = true;
+                    validResponse = true;
+                } else {
+                    System.out.println("please enter either 'y' or 'n' as your response");
+                    continue;
+                }
             }
-
         }
+
+        scanner.close();
 
     }
 
