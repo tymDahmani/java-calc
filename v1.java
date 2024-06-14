@@ -7,13 +7,15 @@ public class v1 {
         Scanner scanner = new Scanner(System.in);
         Boolean keepCalculating = true;
 
+        // usage instructions
+        System.out.println("Usage Instructions:");
+        System.out.println(
+                "to choose the operator: type either the symbol of the operator (+ for addition, - for subtraction, ");
+        System.out
+                .println("* for multiplication, and / for division), or the operator name in the right spelling.");
+        System.out.println("to exit the program, type \"exit\". enjoy!");
+
         while (keepCalculating == true) {
-            System.out.println("Usage Instructions:");
-            System.out.println(
-                    "to choose the operator: type either the symbol of the operator (+ for addition, - for subtraction, ");
-            System.out
-                    .println("* for multiplication, and / for division), or the operator name in the right spelling.");
-            System.out.println("to exit the program, type \"exit\". enjoy!");
             System.out.println("What operation do you wish to do? (please just use integers)");
             operation = scanner.nextLine();
             if (operation.equals("addition") || operation.equals("+")) {
