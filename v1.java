@@ -5,41 +5,63 @@ public class v1 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Boolean keepCalculating = true;
 
-        System.out.println("What operation do you wish to do?");
-        operation = scanner.nextLine();
-        if (operation.equals("addition") || operation.equals("+")) {
-            System.out.println(
-                    "please enter the numbers you would like to add (first number, 'enter key', second number)");
-            int first_num = scanner.nextInt();
-            int second_num = scanner.nextInt();
-            int result = addition(first_num, second_num);
-            System.out.println("the result: " + result);
+        while (keepCalculating == true) {
+            System.out.println("What operation do you wish to do? (please just use integers)");
+            operation = scanner.nextLine();
+            if (operation.equals("addition") || operation.equals("+")) {
+                System.out.println(
+                        "please enter the numbers you would like to add (first number, 'enter key', second number)");
+                int first_num = scanner.nextInt();
+                int second_num = scanner.nextInt();
+                int result = addition(first_num, second_num);
+                System.out.println("the result: " + result);
 
-        } else if (operation.equals("subtraction") || operation.equals("-")) {
-            System.out.println(
-                    "please enter the numbers you would like to subtracte (first number, 'enter key', second number)");
-            int first_num = scanner.nextInt();
-            int second_num = scanner.nextInt();
-            int result = subtraction(first_num, second_num);
-            System.out.println("the result: " + result);
+            } else if (operation.equals("subtraction") || operation.equals("-")) {
+                System.out.println(
+                        "please enter the numbers you would like to subtracte (first number, 'enter key', second number)");
+                int first_num = scanner.nextInt();
+                int second_num = scanner.nextInt();
+                int result = subtraction(first_num, second_num);
+                System.out.println("the result: " + result);
 
-        } else if (operation.equals("multiplication") || operation.equals("*")) {
-            System.out
-                    .println("enter the numebrs you would like to multiply (first number, 'enter key', second number)");
-            int first_num = scanner.nextInt();
-            int second_num = scanner.nextInt();
-            int result = multiplication(first_num, second_num);
-            System.out.println("the result:" + result);
+            } else if (operation.equals("multiplication") || operation.equals("*")) {
+                System.out
+                        .println(
+                                "enter the numebrs you would like to multiply (first number, 'enter key', second number)");
+                int first_num = scanner.nextInt();
+                int second_num = scanner.nextInt();
+                int result = multiplication(first_num, second_num);
+                System.out.println("the result:" + result);
 
-        } else if (operation.equals("division") || operation.equals("/")) {
-            System.out.println(
-                    "enter the numbers you would like to divide from each other (first number, 'enter key', second number)");
-            int first_num = scanner.nextInt();
-            int second_num = scanner.nextInt();
-            int result = division(first_num, second_num);
-            System.out.println("the result: " + result);
+            } else if (operation.equals("division") || operation.equals("/")) {
+                System.out.println(
+                        "enter the numbers you would like to divide from each other (first number, 'enter key', second number)");
+                int first_num = scanner.nextInt();
+                int second_num = scanner.nextInt();
+                double result = division(first_num, second_num);
+                double remainder = remainder(first_num, second_num);
+                if (remainder != 0) {
+                    System.out.println("the remainder: " + remainder);
+                }
+                System.out.println("the result: " + result);
+            } else {
+                System.out.println(
+                        "please type the symbol of the operation or the word of operation correctly to start calculating :)");
+            }
+
+            scanner.nextLine();
+
+            System.out.println("would you like to calculate something more? [Y/N]");
+            String response = scanner.nextLine();
+            if (response.equalsIgnoreCase("N")) {
+                keepCalculating = false;
+                System.out.println("see you around!");
+            }
+
         }
+
     }
 
     public static int addition(int first_num, int second_num) {
@@ -57,13 +79,13 @@ public class v1 {
         return result;
     }
 
-    public static int division(int first_num, int second_num) {
+    public static double division(int first_num, int second_num) {
         double result = first_num / second_num;
+        return result;
+    }
+
+    public static int remainder(int first_num, int second_num) {
         double remainder = first_num % second_num;
-        if (remainder != 0) {
-            System.out.println(remainder);
-            return (int) remainder;
-        }
-        return (int) result;
+        return (int) remainder;
     }
 }
