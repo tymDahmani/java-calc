@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
@@ -39,14 +40,34 @@ public class frame_v2 extends JFrame implements ActionListener {
         fstNum =  new JTextField();
         fstNum.setPreferredSize(new Dimension(100, 40));
         fstNum.setBounds(117, 300, 50, 43);
+        fstNum.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        fstNum.setForeground(Color.white);
+        fstNum.setBackground(new Color(49, 49, 49));
+        fstNum.setCaretColor(new Color(147, 0, 255));
 
         sndNum = new JTextField();
         sndNum.setPreferredSize(new Dimension(100, 40));
         sndNum.setBounds(250, 300, 50, 43);
+        sndNum.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        sndNum.setForeground(Color.white);
+        sndNum.setBackground(new Color(49, 49, 49));
+        sndNum.setCaretColor(new Color(147, 0, 255));
 
-        op = new JTextField();
-        op.setPreferredSize(new Dimension(100, 40));
+        // op = new JTextField();
+        // op.setPreferredSize(new Dimension(100, 40));
+        // op.setBounds(189, 300, 40, 33);
+        // op.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        // op.setForeground(Color.black);
+        // op.setBackground(Color.white);
+        // op.setCaretColor(new Color(147, 0, 255));
+        // op.setText("+");
+
+        String[] operators = {"+", "-", "*", "/"};
+        JComboBox op = new JComboBox<>(operators);
         op.setBounds(189, 300, 40, 33);
+        op.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        op.setForeground(Color.black);
+        op.setBackground(Color.white);
 
         this.setResizable(false);
         this.setSize(420, 620);
@@ -55,6 +76,7 @@ public class frame_v2 extends JFrame implements ActionListener {
         this.add(calculate);
         this.add(fstNum);
         this.add(sndNum);
+        // this.add(op);
         this.add(op);
 
     }
@@ -63,6 +85,12 @@ public class frame_v2 extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==calculate) {
             System.out.println("yo, i should be calculating");
+            // add calculating actions later
+            String first_num = fstNum.getText();
+            String second_num = sndNum.getText();
+            // String operator = op.getText();
+            
+            System.out.println(first_num); // test
         }
     }
     
