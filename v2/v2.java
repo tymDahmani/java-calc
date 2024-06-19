@@ -1,3 +1,7 @@
+/* 
+v2 has been canceled due to difficulties with the JTextField input values thing. link to the stackoverflow solution is bellow (line 22)
+*/
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -16,6 +20,7 @@ public class v2 {
 
         if(frame.op.equals("+")) {
             // addition(frame.fstNum, frame.sndNum); // look up here: "https://stackoverflow.com/questions/1313390/is-there-any-way-to-accept-only-numeric-values-in-a-jtextfield" to fix the JTextField input problem
+
         }
 
 
