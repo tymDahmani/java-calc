@@ -21,7 +21,7 @@ public class v3 {
             double result = subtraction.subtraction(a, b);
             System.out.println("subtraction: " + result);
         } else if (sc.nextLine().equalsIgnoreCase("multiplication") || sc.nextLine().equalsIgnoreCase("*")) {
-
+            // hi ?
         }
 
         double sum = addition.addtion(a, b);
