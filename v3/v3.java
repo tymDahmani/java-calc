@@ -5,34 +5,53 @@ import java.util.Scanner;
 public class v3 {
     public static void main (String[] args) {
 
-        addition addition = new addition();
-        subtraction subtraction = new subtraction();
-        multiplication multiplication = new multiplication();
+        Scanner scanner = new Scanner(System.in);
+        addition add = new addition();
+        subtraction subt = new subtraction();
+        multiplication multi = new multiplication();
         division division = new division();
-        Scanner sc = new Scanner(System.in);
 
-        // initializing the inputs
-        System.out.println("please enter the numbers you would like to operate on: ");
-        double a = sc.nextDouble(); // this shit seems to only work with commas as double/float numbers - dots don't work
-        double b = sc.nextDouble();
+        System.out.println("method 1: enter a and b, then operator");
+        System.out.println("metjod 2: enter a, operator, then b");
+        int method = scanner.nextInt();
 
-        System.out.println(
-            "enter the operation name or its symbol: "
-        );
-        String operator = sc.nextLine(); 
-        // main if statement:
-        if (operator.equalsIgnoreCase("addition") || operator.equals("+")) {
-            double sum = addition.addtion(a, b);
-            System.out.println("sum: " + sum);
-        } else if (operator.equalsIgnoreCase("subtraction") || operator.equals("-")) {
-            double difference = subtraction.subtraction(a, b);
-            System.out.println("difference: " + difference);
-        } else if (operator.equalsIgnoreCase("multiplication") || operator.equals("*")) {
-            double product = multiplication.multiplication(a, b);
-            System.out.println("product: " + product);
-        } else if (operator.equalsIgnoreCase("division") || operator.equals("/")) {
-            double quotient = division.division(a, b);
-            System.out.println("quotient: " + quotient);
+        if (method == 1) {
+            System.out.println("enter the first number: ");
+            double a = scanner.nextDouble();
+
+            System.out.println("what operation would you like to apply? ");
+            char operator = scanner.next().charAt(0);
+
+            System.out.println("enter the second number: ");
+            double b = scanner.nextDouble();
+            
+            double c = 0;
+
+            switch (operator) {
+                case '+':
+                    c = a + b;
+                    break;
+                case '-':
+                    c = a - b;
+                    break;
+                case '*':
+                    c = a * b;
+                    break;
+                case '/':
+                    if (b != 0) {
+                        c = a/ b;
+                    } else {
+                        System.out.println("error: division by zero isn't possible :/");
+                    }
+                    break;
+                default:
+                    System.out.println("error: please use the symbols '+, -, *, or/' for the operator");
+            }
+
+            System.out.println("result: " + c);
+            
         }
+
+       
     }
 }
