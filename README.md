@@ -13,7 +13,7 @@
   NOTE: i got some help from chatgpt in this code (BUT THERE AREN'T ANY DIRECT COPY-PASTES)
   
   **CONTRIBUTION**: _if you would like to contribute, you can find what's needed in `v3.java`._ for lazy ppl:
-  "if i would like to do something further to this version, it would be to  add something makes the code get the user to the beginning of the case instead of the beginning of the whole program if they entered an invalid operator (or maybe even invalid inputs as the numbers (tbh i didn't even try that yet))"
+  "if i would like to do something further to this version, it would be to  add something makes the code get the user to the beginning of the case instead of the beginning of the whole program if they entered an invalid operator. (or maybe even invalid inputs as the numbers (tbh i didn't even try that yet)) note that i tried using `case1` or anyother var just to point to the place to break to - like `OUTER`, but... never worked.
   
   _!uses terminal!_
 
