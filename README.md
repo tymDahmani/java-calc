@@ -1,11 +1,10 @@
-## version three is ready! (/≧▽≦)/
+# version three is ready! (/≧▽≦)/
 
 ------- *the dev branch is for the code updates. will let my stable codes in this branch after i'm done with them*
 
 
-
-# versions details:
-## v3:
+## versions details:
+### v3:
   this version uses two methods, 1 for the structure (a, operator, b, result), 2 for the structure (a, b, operatpr, result).
   in this version, the java level is also more advance than in v1 (it's not so advanced like a real programmer).
 
@@ -18,8 +17,8 @@
   
   _!uses terminal!_
 
-## v2: (-down-)
+### v2: (-down-)
   this version was planned to be a gui version, but got some difficulties during the process. - it's down for now
 
-## v1:
+### v1:
   this version is the first and simplist version. it uses the terminal and only integers.
